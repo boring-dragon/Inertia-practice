@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Publication;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -25,7 +26,7 @@ class PublicationFactory extends Factory
         return [
             "title" => $this->faker->sentence,
             "slug" => Str::slug($this->faker->sentence),
-            "author" => $this->faker->name,
+            "user_id" => User::factory(),
             "content" => $this->faker->paragraph
         ];
     }

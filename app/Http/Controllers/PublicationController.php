@@ -18,6 +18,7 @@ class PublicationController extends Controller
                 return [
                     "id" => $publication->id,
                     "title" => $publication->title,
+                    "author" => $publication->user->name,
                     "created_at" => $publication->created_at->diffforHumans(),
                 ];
             })
@@ -35,7 +36,6 @@ class PublicationController extends Controller
             'publication' => [
                 "id" => $publication->id,
                 "title" => $publication->title,
-                "author" => $publication->author,
                 "content" => $publication->content
             ]
         ]);
@@ -45,7 +45,7 @@ class PublicationController extends Controller
     {
         $inputs = $request->all();
         $inputs["slug"] = Str::slug($inputs["title"]);
-        Publication::create($inputs);
+        auth()->user()->publications()->create($inputs);
 
         return Redirect::route('publications')->with('success', 'Publication created.');
     }

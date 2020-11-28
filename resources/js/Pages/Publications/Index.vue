@@ -19,6 +19,7 @@
                 <table class="w-full whitespace-no-wrap">
                     <tr class="text-left font-bold">
                         <th class="px-6 pt-6 pb-4">Title</th>
+                        <th class="px-6 pt-6 pb-4">Author</th>
                         <th class="px-6 pt-6 pb-4" colspan="2">Created At</th>
                         <th></th>
                     </tr>
@@ -34,6 +35,14 @@
                             >
                                 {{ publication.title }}
                             </inertia-link>
+                        </td>
+
+                          <td class="border-t">
+                            <span
+                                class="px-6 py-4 flex items-center focus:text-indigo-500"
+                            >
+                                {{ publication.author }}
+                            </span>
                         </td>
 
                         <td class="border-t">

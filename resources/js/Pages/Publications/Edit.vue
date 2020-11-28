@@ -10,12 +10,7 @@
                             class="pr-6 pb-8 w-full lg:w-1/2"
                             label="Title"
                         />
-                        <text-input
-                            v-model="form.author"
-                            :errors="$page.errors.author"
-                            class="pr-6 pb-8 w-full lg:w-1/2"
-                            label="Author"
-                        />
+                      
                           <VueTrix v-model="form.content" placeholder="Enter content"/>
                     </div>
                     <div
@@ -57,7 +52,6 @@ export default {
             sending: false,
             form: {
                 title: this.publication.title,
-                author: this.publication.author,
                 content: this.publication.content
             }
         };

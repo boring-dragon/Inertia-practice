@@ -4215,11 +4215,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -4236,7 +4231,6 @@ __webpack_require__.r(__webpack_exports__);
       sending: false,
       form: {
         title: null,
-        author: null,
         content: null
       }
     };
@@ -4299,11 +4293,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 
@@ -4323,7 +4312,6 @@ __webpack_require__.r(__webpack_exports__);
       sending: false,
       form: {
         title: this.publication.title,
-        author: this.publication.author,
         content: this.publication.content
       }
     };
@@ -4353,6 +4341,15 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 /* harmony import */ var _Shared_Pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Shared/Pagination */ "./resources/js/Shared/Pagination.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -49711,18 +49708,6 @@ var render = function() {
                     }
                   }),
                   _vm._v(" "),
-                  _c("text-input", {
-                    staticClass: "pr-6 pb-8 w-full lg:w-1/2",
-                    attrs: { errors: _vm.$page.errors.author, label: "Author" },
-                    model: {
-                      value: _vm.form.author,
-                      callback: function($$v) {
-                        _vm.$set(_vm.form, "author", $$v)
-                      },
-                      expression: "form.author"
-                    }
-                  }),
-                  _vm._v(" "),
                   _c("VueTrix", {
                     attrs: { placeholder: "Enter content" },
                     model: {
@@ -49815,18 +49800,6 @@ var render = function() {
                         _vm.$set(_vm.form, "title", $$v)
                       },
                       expression: "form.title"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("text-input", {
-                    staticClass: "pr-6 pb-8 w-full lg:w-1/2",
-                    attrs: { errors: _vm.$page.errors.author, label: "Author" },
-                    model: {
-                      value: _vm.form.author,
-                      callback: function($$v) {
-                        _vm.$set(_vm.form, "author", $$v)
-                      },
-                      expression: "form.author"
                     }
                   }),
                   _vm._v(" "),
@@ -49950,6 +49923,10 @@ var render = function() {
                       _vm._v("Title")
                     ]),
                     _vm._v(" "),
+                    _c("th", { staticClass: "px-6 pt-6 pb-4" }, [
+                      _vm._v("Author")
+                    ]),
+                    _vm._v(" "),
                     _c(
                       "th",
                       {
@@ -49993,6 +49970,23 @@ var render = function() {
                           ],
                           1
                         ),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "border-t" }, [
+                          _c(
+                            "span",
+                            {
+                              staticClass:
+                                "px-6 py-4 flex items-center focus:text-indigo-500"
+                            },
+                            [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(publication.author) +
+                                  "\n                        "
+                              )
+                            ]
+                          )
+                        ]),
                         _vm._v(" "),
                         _c(
                           "td",
