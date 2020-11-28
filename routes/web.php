@@ -3,6 +3,8 @@
 use App\Http\Controllers\PublicationController;
 use App\Models\Publication;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +29,20 @@ Route::get('dashboard/publication/{publication}/edit', [PublicationController::c
 Route::put('dashboard/{publication}', [PublicationController::class, 'update'])->middleware('auth')->name('publications.update');
 Route::post('dashboard/publications', [PublicationController::class, 'store'])->middleware('auth')->name('publications.store');
 Route::delete('dashboard/publications/{publication}', [PublicationController::class, 'destroy'])->middleware('auth')->name('publications.destroy');
+
+
+Route::get('dashboard/mypub', function(){
+    return Inertia::render('Publications/MyPublications', [
+        'publications' => auth()->user()->publications()->latest()->paginate(5)->transform(function ($publication) {
+            return [
+                "id" => $publication->id,
+                "title" => $publication->title,
+                "author" => $publication->user->name,
+                "created_at" => $publication->created_at->diffforHumans(),
+            ];
+        })
+    ]);
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard', [

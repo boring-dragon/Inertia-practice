@@ -2,7 +2,7 @@
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Publications
+                My Publications (Only the publications posted by me)
             </h2>
         </template>
 
@@ -54,7 +54,22 @@
                                 {{ publication.created_at }}
                             </inertia-link>
                         </td>
-                       
+                        <td class="flex justify-end border-t mr-5">
+                            <inertia-link
+                                class="text-indigo-600 hover:underline mr-5"
+                              :href="route('publications.edit', publication.id)"
+                            >
+                                Edit
+                            </inertia-link>
+                            <button
+                                class="text-red-600 hover:underline"
+                                tabindex="-1"
+                                type="button"
+                                @click="destroy(publication)"
+                            >
+                                Delete Publication
+                            </button>
+                        </td>
                     </tr>
                 </table>
             </div>

@@ -32,6 +32,9 @@ class PublicationController extends Controller
 
     public function edit(Publication $publication)
     {
+        if ($publication->user->id !== auth()->user()->id) {
+            abort(403);
+        }
         return Inertia::render('Publications/Edit', [
             'publication' => [
                 "id" => $publication->id,
