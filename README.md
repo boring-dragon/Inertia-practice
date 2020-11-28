@@ -7,6 +7,12 @@ This is a sample blog I made to familiarize myself with using intertia JS with L
 
 ![screenshot](screenshot1.PNG)
 
+![screenshot](screenshot2.PNG)
+
+![screenshot](screenshot3.PNG)
+
+![screenshot](screenshot4.PNG)
+
 
 ## Installation
 
