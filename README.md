@@ -5,6 +5,7 @@ This is a sample blog I made to familiarize myself with using intertia JS with L
 
 ## Some screenshots
 
+![screenshot](screenshot1.PNG)
 
 
 ## Installation

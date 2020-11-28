@@ -2971,6 +2971,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -47063,6 +47067,21 @@ var render = function() {
                     [
                       _vm._v(
                         "\n                            Publications\n                        "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "jet-nav-link",
+                    {
+                      attrs: {
+                        href: _vm.route("mypublications"),
+                        active: _vm.route().current("mypublications*")
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            My Publications\n                        "
                       )
                     ]
                   )

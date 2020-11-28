@@ -17,6 +17,10 @@
                                 Publications
                             </jet-nav-link>
 
+                              <jet-nav-link :href="route('mypublications')" :active="route().current('mypublications*')">
+                                My Publications
+                            </jet-nav-link>
+
                         </div>
                     </div>
 
