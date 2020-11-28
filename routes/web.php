@@ -42,7 +42,7 @@ Route::get('dashboard/mypub', function(){
             ];
         })
     ]);
-})->name('mypublications');
+})->name('mypublications')->middleware('auth');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard', [
