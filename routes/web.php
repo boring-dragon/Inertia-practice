@@ -45,7 +45,7 @@ Route::get('dashboard/mypub', function(){
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia\Inertia::render('Dashboard', [
+    return Inertia::render('Dashboard', [
         'stats' => [
             'publication' => Publication::count()
         ]
