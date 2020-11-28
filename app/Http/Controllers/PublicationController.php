@@ -55,6 +55,10 @@ class PublicationController extends Controller
 
     public function update(Publication $publication, Request $request)
     {
+        if ($publication->user->id !== auth()->user()->id) {
+            abort(403);
+        }
+        
         $inputs = $request->all();
         $inputs["slug"] = Str::slug($inputs["title"]);
 
